@@ -1,0 +1,38 @@
+@model LojaWebMvc.Models.Seller
+@{
+ViewData["Title"] = "Delete seller";
+}
+
+
+<div class="container">
+    <h2 class="my-4">Delete seller</h2>
+ 
+    <div class="card">
+        <div class="card-header">
+            Details seller:
+        </div>
+        <div class="card-body">
+            <div class="row">
+              
+                    <div class="col-md-6">
+                        <h4>Nome: @Html.DisplayFor(model => model.Name)</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">ID: @Html.DisplayFor(model => model.Id)</li>
+                            <li class="list-group-item">Email: @Html.DisplayFor(model => model.Email)</li>
+                            <li class="list-group-item">Nascimento: @Html.DisplayFor(model => model.BirthDate)</li>
+                            <li class="list-group-item">Salario: @Html.DisplayFor(model => model.BaseSalary)</li>
+                        </ul>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+ <div class="mt-4">
+        <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"/>
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a asp-action="Index" class="btn btn-primary">Back</a>
+    </form>
+</div>
+   
+</div>

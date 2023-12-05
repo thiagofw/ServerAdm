@@ -1,0 +1,38 @@
+@model LojaWebMvc.Models.Server
+@{
+ViewData["Title"] = "Delete server";
+}
+
+
+<div class="container">
+    <h2 class="my-4">Delete server ? </h2>
+ 
+    <div class="card">
+        <div class="card-header">
+            Please confirm action - click in delete 
+        </div>
+        <div class="card-body">
+            <div class="row">
+              
+                    <div class="col-md-6">
+                        <h4>Name: @Html.DisplayFor(model => model.Name)</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">ID: @Html.DisplayFor(model => model.Id)</li>
+                            <li class="list-group-item">Name: @Html.DisplayFor(model => model.Name)</li>
+                            <li class="list-group-item">Address: @Html.DisplayFor(model => model.Address)</li>
+                            <li class="list-group-item">Server status: @Html.DisplayFor(model => model.Status)</li>
+                        </ul>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+ <div class="mt-4">
+        <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"/>
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a asp-action="Index" class="btn btn-primary">Back</a>
+    </form>
+</div>
+   
+</div>

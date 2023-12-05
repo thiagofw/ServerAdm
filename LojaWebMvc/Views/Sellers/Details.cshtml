@@ -1,0 +1,39 @@
+@model LojaWebMvc.Models.Seller;
+@{
+    
+    ViewData["Title"]= "Details";
+
+}
+<div class="container">
+    <h2 class="my-4">Details</h2>
+ 
+    <div class="card">
+        <div class="card-header">
+            Seller details
+        </div>
+        <div class="card-body">
+            <div class="row">
+                    <div class="col-md-6">
+                        <h4>Nome: @Html.DisplayFor(model => model.Name)</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">ID: @Html.DisplayFor(model => model.Id)</li>
+                            <li class="list-group-item">Name: @Html.DisplayFor(model => model.Name)</li>
+                            <li class="list-group-item">Email: @Html.DisplayFor(model => model.Email)</li>
+                             <li class="list-group-item">Base Salary: @Html.DisplayFor(model => model.BaseSalary)</li>
+                            <li class="list-group-item">Birth Date: @Html.DisplayFor(model => model.BirthDate)</li>
+                            <li class="list-group-item">Department: @Html.DisplayFor(model => model.Department.Name)</li>
+                            <!-- -->
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+ <div class="mt-4">
+        <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"/>
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a asp-action="Index" class="btn btn-primary">Back</a>
+        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.Id">Edit</a>
+    </form>
+</div>  
+</div>

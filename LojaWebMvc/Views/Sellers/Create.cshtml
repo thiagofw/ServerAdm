@@ -1,0 +1,91 @@
+@model LojaWebMvc.Models.ViewModels.SellerFormViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h2>@ViewData["Title"]</h2>
+   <div class="mt-4">
+         <a asp-action="Index" class="btn btn-primary">Back</a>
+    </div>
+<div class="row">
+<div class="col-md-12">
+<br>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="card">
+<div class="card-header text-center bg-dark text-white">
+<div class="row align-items-center">
+<div class="col-md-12">
+<h5>New Seller</h5>
+</div>
+</div>
+</div>
+<div class="card mt-4">
+<div class="card-header">Data::
+</div>
+<div class="card-body">
+<div class="row">
+<form asp-controller="Sellers" asp-action="Create" method="post">
+    <div class="row">
+    <div class="col">
+    <label asp-for="Seller.Name"></label>
+    <input asp-for="Seller.Name" class="form-control input-sm" />
+    <span asp-validation-for="Seller.Name" class="text-danger"></span>
+    </div>
+    <div class="col">
+    <label asp-for="Seller.Email"></label>
+    <input asp-for="Seller.Email" class="form-control input-sm" />
+    <span asp-validation-for="Seller.Email" class="text-danger"></span>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col">
+    <label asp-for="Seller.BirthDate"></label>
+    <input asp-for="Seller.BirthDate" class="form-control input-sm" />
+    <span asp-validation-for="Seller.BirthDate" class="text-danger"></span>
+    </div>
+    <div class="col">
+    <label asp-for="Seller.BaseSalary"></label>
+    <input asp-for="Seller.BaseSalary" class="form-control input-sm" />
+    <span asp-validation-for="Seller.BaseSalary" class="text-danger"></span>
+    </div>
+    <div class="col">
+   <label asp-for="Seller.DepartmentId" class="control-label"></label>
+   <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments, "Id", "Name" ))" class="form-control"></select>
+    </div>
+    </div>
+    <div class="mt-4">
+    <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+       <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+
+   
+   <script type="text/javascript">
+$(document).ready(function () {
+$("#Seller_DepartmentId").change(function () {
+var f = $("form");
+f.submit(function () {
+var productData = f.serialize();
+$.post(f.attr("action"), Seller_Department, function (result, status) {
+if (result !== null) {
+$("#Seller_Department").text(result.Seller_Department);
+}
+else {
+alert('Invalid ID');
+}
+});
+});
+});
+});
+
+
+</script>
+
+   
+}

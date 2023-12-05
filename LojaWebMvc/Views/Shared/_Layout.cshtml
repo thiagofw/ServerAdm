@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LojaWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LojaWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <!--principal->
+          <div class="container-fluid">  <!--largura total-->
+             <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"> <!--menu toggle -->
+              <span class="navbar-toggler-icon"></span> 
+            </button>
+             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> <!--para agrupar e ocultar-->
+                <ul class="navbar-nav">
+                   <li class="nav-item"><a asp-action="Index"  asp-controller="Home" class="nav-link">Home</a>
+               
+                   </li>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Servers
+                  </a>
+                   <div class="dropdown-menu" >
+                    <a class="dropdown-item" asp-action="Index"  asp-controller="Servers">List</a>
+                     <a class="dropdown-item" asp-action="Create"  asp-controller="Servers">Create</a>
+                     <a class="dropdown-item" asp-action="Status"  asp-controller="Servers">Status</a>
+                   
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logs</a>
+                  </div>
+                  </div>
+                   <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Users
+                  </a>
+                   <div class="dropdown-menu" >
+                    <a class="dropdown-item" asp-action="Index"  asp-controller="Logins">List</a>
+                     <a class="dropdown-item" asp-action="Create"  asp-controller="Logins">Create</a>
+                     <a class="dropdown-item" asp-action="Status"  asp-controller="Logins">Status</a>
+                   
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logs</a>
+                  </div>
+                  </div>
+                  <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   New Costumer
+                  </a>
+                   <div class="dropdown-menu" >
+                    <a class="dropdown-item" asp-action="Index"  asp-controller="SalesRecords">List</a>
+                     <a class="dropdown-item" asp-action="SimpleSearch"  asp-controller="SalesRecords">Search</a>
+                     <a class="dropdown-item" asp-action="GroupingSearch"  asp-controller="SalesRecords">Insert</a>
+                   
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logs</a>
+                  </div>
+                  </div>
+                    <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Orders
+                  </a>
+                   <div class="dropdown-menu" >
+                    <a class="dropdown-item" asp-action="Index"  asp-controller="SalesRecords">List</a>
+                     <a class="dropdown-item" asp-action="SimpleSearch"  asp-controller="SalesRecords">Search</a>
+                     <a class="dropdown-item" asp-action="GroupingSearch"  asp-controller="SalesRecords">Insert</a>
+                   
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logs</a>
+                  </div>
+                  </div>
+                    <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   ISP Config
+                  </a>
+                   <div class="dropdown-menu" >
+                    <a class="dropdown-item" asp-action="Index"  asp-controller="SalesRecords">List</a>
+                     <a class="dropdown-item" asp-action="SimpleSearch"  asp-controller="SalesRecords">Search</a>
+                     <a class="dropdown-item" asp-action="GroupingSearch"  asp-controller="SalesRecords">Insert</a>
+                   
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logs</a>
+                  </div>
+                  </div>
+                   <li class="nav-item"><a href="#" class="nav-link">Download</a>
+                   </li>
+                   <li class="nav-item"><a href="#" class="nav-link">Download</a>
+                   </li>
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Support
+                  </a>
+                   <div class="dropdown-menu" >
+                    <a class="dropdown-item" href="#">Database download </a>
+                    <a class="dropdown-item" href="#">License</a>
+                    <a class="dropdown-item" href="#">Servers status</a>
+                    <a class="dropdown-item" href="#">Chat online</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Send files to support</a>
+                  </div>
+                </div>
+                </ul>
+                </div>
+
+</nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - LojaWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/popper.js"></script>
+    <script src="~/lib/jquery/dist/popper.js.map"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

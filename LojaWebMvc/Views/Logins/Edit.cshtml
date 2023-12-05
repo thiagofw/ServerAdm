@@ -1,0 +1,62 @@
+@model LojaWebMvc.Models.ViewModels.LoginFormViewModel
+
+@{
+    ViewData["Title"] = "Edit login";
+}
+
+<!-- <h2>Dashboard/Novo Cliente</h2> -->
+
+    <div class="mt-4">
+         <a asp-action="Index" class="btn btn-primary">Back</a>
+    </div>
+<div class="row">
+<div class="col-md-12">
+<br>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="card">
+<div class="card-header text-center bg-dark text-white">
+<div class="row align-items-center">
+<div class="col-md-12">
+<h5>Novo Cliente</h5>
+</div>
+</div>
+</div>
+<div class="card mt-4">
+<div class="card-header">Login Info::
+</div>
+<div class="card-body">
+<div class="row">
+    <form asp-controller="Logins" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Login.Id"/>
+    <div class="row">
+    <div class="col">
+    <label asp-for="Login.Name"></label>
+    <input asp-for="Login.Name" class="form-control input-sm" />
+    <span asp-validation-for="Login.Name" class="text-danger"></span>
+    </div>
+    <div class="col">
+    <label asp-for="Login.Username "></label>
+    <input asp-for="Login.Username" class="form-control input-sm" />
+    <span asp-validation-for="Login.Username" class="text-danger"></span>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col">
+  <label asp-for="Login.Password"></label>
+    <input asp-for="Login.Password" class="form-control input-sm" />
+    <span asp-validation-for="Login.Password" class="text-danger"></span>
+   
+   <div class="form-group">
+    <label asp-for="Login.ServerId" class="control-label"></label>
+    <select asp-for="Login.ServerId" asp-items="@(new SelectList(Model.Servers,"Id", "Name"))" class="form-control"></select>
+    </div>
+
+    </div>
+    <div class="mt-4">
+    <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
+</div>
+</div>
